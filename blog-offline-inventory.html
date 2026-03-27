@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Why Your Small Business Needs an Offline Inventory Management System - Topaz POS Blog" />
+    <title>Why Your Small Business Needs an Offline Inventory Management System | Topaz POS</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, #EFF6FF 0%, #e6f9ee 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--green-light);
+            color: var(--green-dark);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 6px 16px;
+            border-radius: 99px;
+            margin-bottom: 24px;
+        }
+
+        .article-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            color: var(--navy);
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 24px;
+            text-transform: capitalize;
+        }
+
+        .article-meta {
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .article-author {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .article-content-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-content {
+            font-family: Verdana, sans-serif;
+            font-size: 12pt;
+            color: var(--text);
+            line-height: 1.0;
+            text-align: justify;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 48px 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: left;
+        }
+
+        .article-content h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 40px 0 16px;
+            text-align: left;
+        }
+
+        .article-content .faq-item {
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            background: var(--light);
+        }
+
+        .article-content .faq-q {
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .article-content .faq-a {
+            color: var(--muted);
+            display: flex;
+            gap: 12px;
+        }
+
+        .article-cta {
+            background: var(--green-light);
+            border: 2px solid var(--green);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .article-cta h3 {
+            margin-top: 0;
+            color: var(--navy);
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo" aria-label="Topaz POS Home">
+                <img src="images/icon.png" alt="Topaz Logo" class="logo-img" style="height: 36px; width: auto;"
+                    onerror="this.style.display='none';" />
+                <span class="logo-text">Topaz <span class="logo-pos">POS</span></span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#why-topaz">About Us</a></li>
+                    <li><a href="index.html#what-you-get">Product</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact" class="btn btn-nav">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile drawer -->
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+            <ul>
+                <li><a href="index.html#home" class="mobile-link">Home</a></li>
+                <li><a href="index.html#why-topaz" class="mobile-link">About Us</a></li>
+                <li><a href="index.html#what-you-get" class="mobile-link">Product</a></li>
+                <li><a href="blog.html" class="mobile-link">Blog</a></li>
+                <li><a href="index.html#contact" class="mobile-link btn btn-green-full">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="bg-light">
+        <!-- ===== ARTICLE HEADER ===== -->
+        <section class="article-header">
+            <div class="container fade-in">
+                <span class="article-category">Inventory Management</span>
+                <h1 class="article-title">Why Your Small Business Needs an Offline Inventory Management System</h1>
+                <div class="article-meta">
+                    <span class="article-author">Kelvin Ngatia</span>
+                    <span>•</span>
+                    <span>Mar 26, 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ARTICLE CONTENT ===== -->
+        <section class="container" style="padding-bottom: 80px;">
+            <article class="article-content-wrap fade-in">
+                <a href="blog.html" class="back-link">← Back to Blog</a>
+
+                <div class="article-content">
+                    <p>You and I need to be honest with each other. If you're still tracking stock using counter
+                        books, you're losing money daily. It may not feel obvious now, but those small
+                        mistakes add up faster than you think. Your time is too valuable to spend every evening counting
+                        items in a dusty storeroom.</p>
+
+                    <p>You didn't start your business to be stressed all the time, you started it to earn a living,
+                        build something solid, and gain freedom. That's why this conversation matters today. Let's talk
+                        about why an offline inventory management system isn't a luxury anymore, but a survival tool for
+                        your business.</p>
+
+                    <p>This is about clarity. This is about control. And most importantly, this is about peace of mind.
+                    </p>
+
+                    <h2>Stop Guessing What Remains On Your Shelves</h2>
+
+                    <p>You've felt this moment before when a loyal customer walks in and asks for their favorite item.
+                        You smile, walk to the shelf, and suddenly realize it's completely finished. That awkward pause
+                        hurts more than you admit because human memory can't track hundreds of products moving daily.
+                    </p>
+
+                    <p>When you use a proper inventory system, your stock updates itself every time you sell. You don't
+                        rely on guessing or hope because you simply check the screen and see the truth. That alone
+                        changes how you confidently run your shop.</p>
+
+                    <p>You stop buying products that don't sell. You stop tying cash in dead stock. Your shelves stay
+                        balanced, and your customers leave happy because what they want is always available.</p>
+
+                    <h2>Keep Selling When The Internet Dies</h2>
+
+                    <p>You already know how unreliable the internet can be when the network disappears during peak
+                        hours. Customers get impatient, and sales quickly slow down. That shouldn't control your
+                        business.</p>
+
+                    <p>An offline inventory system keeps working even when the internet is gone. Every sale is recorded
+                        instantly without needing a connection. Your shop keeps moving, and customers keep buying
+                        without delays.</p>
+
+                    <p>When the internet finally comes back, everything syncs quietly in the background. With no lost
+                        data or missing sales, there is absolutely no confusion. You stay in control no matter what the
+                        network decides to do.</p>
+
+                    <h2>Turn Daily Numbers Into Smart Decisions</h2>
+
+                    <p>Selling alone isn't enough because you need to understand what's happening behind the counter.
+                        You must know which items move fast and which ones sit for weeks. Your daily numbers tell that
+                        story clearly.</p>
+
+                    <p>When you look at clean reports, your decisions instantly change. You know exactly what to restock
+                        and what to eagerly discount. You know which suppliers deserve your money and which ones don't.
+                    </p>
+
+                    <p>That's when you stop feeling like a tired shopkeeper. You start thinking like a business owner
+                        who understands their market. Numbers stop being scary and start working for you.</p>
+
+                    <h2>Catch Sneaky Losses Before They Ruin You</h2>
+
+                    <p>This part is uncomfortable, but stock losses happen quietly. Sometimes they happen through
+                        mistakes, and sometimes through pure theft. Ignoring it simply doesn't make it go away.</p>
+
+                    <p>A strong inventory system tracks every item sold and every item leaving the shelf. When cash
+                        doesn't match stock, you see it immediately. There's no guessing and no drama.</p>
+
+                    <p>You don't need to accuse anyone blindly because the data speaks for itself. Your staff stays
+                        accountable, and your precious profits stay protected. That alone can successfully save your
+                        growing business.</p>
+
+                    <h2>Master Inventory To Scale Fast</h2>
+
+                    <p>You can't grow a serious business on loose paper and assumptions. Growth needs structure. It
+                        needs systems that work even when you're not watching closely.</p>
+
+                    <p>When you master your inventory, everything becomes significantly easier. Stock taking stops being
+                        painful while planning becomes truly simple. Expansion finally feels possible for you.</p>
+
+                    <p>Stop letting messy records drain your energy, take control today, and upgrade how you manage
+                        sales. Your stress will reduce, and your business confidence will naturally grow. Share your
+                        biggest stock challenge, and let's solve it together.</p>
+
+                    <hr style="border:none; border-top:1px solid var(--border); margin: 50px 0;">
+
+                    <h3>Frequently Asked Questions</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            <span>Q:</span>
+                            <span>What is the best inventory system for a small business?</span>
+                        </div>
+                        <div class="faq-a">
+                            <span>A:</span>
+                            <span>You might be wondering what the best inventory system for a small business really is.
+                                The best choice is one that works even without internet, is easy for your staff to
+                                learn, and gives you clear daily reports. You need something highly practical, not
+                                complicated.</span>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            <span>Q:</span>
+                            <span>How does an offline system manage stock?</span>
+                        </div>
+                        <div class="faq-a">
+                            <span>A:</span>
+                            <span>You may also ask how an offline system efficiently manages stock. It stores all
+                                product and sales data directly on the machine, and every sale updates stock instantly.
+                                When the internet becomes available, everything is safely backed up without you doing
+                                anything.</span>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-q">
+                            <span>Q:</span>
+                            <span>Does tracking stock actually increase profits?</span>
+                        </div>
+                        <div class="faq-a">
+                            <span>A:</span>
+                            <span>You could be thinking about your actual profits too. Yes, tracking stock properly
+                                increases your income faster than most modern strategies. You stop wasting money on slow
+                                products, focus on what sells, and prevent silent losses so your money stays where it
+                                belongs.</span>
+                        </div>
+                    </div>
+
+                    <p>If you want control, clarity, and growth, start with your inventory. It's the incredibly strong
+                        foundation your business has been missing. Take the first step today so you can finally relax.
+                    </p>
+
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer" aria-label="Site footer">
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo logo-white" aria-label="Topaz POS Home">
+                    <img src="images/icon.png" alt="Topaz Logo" class="logo-img" style="height: 36px; width: auto;"
+                        onerror="this.style.display='none';" />
+                    <span class="logo-text">Topaz <span class="logo-pos">POS</span></span>
+                </a>
+                <p class="footer-tagline">Smart Business. Zero Stress.</p>
+                <p class="footer-desc">Empowering Kenyan shopkeepers with affordable, offline-first POS technology.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#why-topaz">About Us</a></li>
+                    <li><a href="index.html#what-you-get">Product</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contact Us</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <span class="contact-icon">📞</span>
+                        <a href="tel:+254723746795">+254 723 746 795</a>
+                    </li>
+                    <li>
+                        <span class="contact-icon">💬</span>
+                        <a href="https://wa.me/254723746795" target="_blank" rel="noopener noreferrer">Chat on
+                            WhatsApp</a>
+                    </li>
+                    <li>
+                        <span class="contact-icon">📍</span>
+                        <span>Nairobi, Kenya</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; <span id="year"></span> Topaz POS. All rights reserved.</p>
+                <p class="footer-motto">Topaz POS: Smart Business. Zero Stress.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        hamburger.addEventListener('click', () => {
+            const open = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', String(!open));
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('mobile-nav-open');
+        });
+
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 20);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
